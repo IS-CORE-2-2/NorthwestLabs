@@ -1,0 +1,130 @@
+﻿@model NorthwestLabs.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Last_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Last_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Address_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Address_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Address_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Address_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Zipcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Zipcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Home_Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Home_Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Cell_Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Cell_Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Payment_Info)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Payment_Info)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Balance)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Customer_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

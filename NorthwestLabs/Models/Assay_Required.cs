@@ -13,8 +13,10 @@ namespace NorthwestLabs.Models
         [Key]
         [Required]
         [DisplayName("Assay ID")]
+        public string Assay_Required_ID { get; set; }
+        [Required]
+        [DisplayName("Assay ID")]
         public string Assay_ID { get; set; }
-        [Key]
         [Required]
         [DisplayName("Required Test ID")]
         public string Required_Test_ID { get; set; }

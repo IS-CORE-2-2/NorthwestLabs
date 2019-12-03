@@ -10,6 +10,8 @@ namespace NorthwestLabs.Models
     public class Order_Compound
     {
         [Key]
+        [Required]
+        public int Order_Compound_ID { get; set; }
         [Display(Name = "Order ID")]
         public int Order_ID { get; set; }
         [Display(Name = "Lab Test Number")]

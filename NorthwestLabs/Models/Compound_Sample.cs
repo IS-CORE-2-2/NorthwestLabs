@@ -10,8 +10,9 @@ namespace NorthwestLabs.Models
     public class Compound_Sample
     {
         [Key]
+        public int Compound_Sample_ID { get; set; }
+        [Display(Name = "Northwest Labs Test Number")]
         public int LT_Number { get; set; }
-        [Key]
         [Display(Name = "Compound Sequence Code")]
         public int Compound_Sequence_Code { get; set; }
         [Display(Name = "Compound Name")]

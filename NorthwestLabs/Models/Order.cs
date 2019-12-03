@@ -22,6 +22,12 @@ namespace NorthwestLabs.Models
         [Display(Name = "Due Date")]
         [StringLength(20, ErrorMessage = "Cannot exceed 20 characters")]
         public string Due_Date { get; set; }
+        [Display(Name = "Order Rerun Date")]
+        [StringLength(20, ErrorMessage = "Cannot exceed 20 characters")]
+        public string  Order_Rerun_Date { get; set; }
+        [Display(Name = "Order Complete Date")]
+        [StringLength(20, ErrorMessage = "Cannot exceed 20 characters")]
+        public string Order_Complete_Date { get; set; }
         [Display(Name = "Order Comments")]
         [StringLength(100, ErrorMessage = "Cannot exceed 100 characters")]
         public string Order_Comments { get; set; }

@@ -11,9 +11,10 @@ namespace NorthwestLabs.Models
     {
         [Key]
         [Required]
+        public int Material_Assay_ID { get; set; }
+        [Required]
         [Display(Name = "Assay ID")]
         public string Assay_ID { get; set; }
-        [Key]
         [Required]
         [Display(Name = "Material ID")]
         public int Material_ID { get; set; }
