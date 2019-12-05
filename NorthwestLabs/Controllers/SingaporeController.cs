@@ -131,7 +131,7 @@ namespace NorthwestLabs.Controllers
             {
                 db.Entry(compound_Sample).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Added_Test_Date");
+                return View("Added_Test_Date");
             }
             return View(compound_Sample);
         }
@@ -156,7 +156,7 @@ namespace NorthwestLabs.Controllers
             {
                 db.Test_Tube.Add(test_Tube);
                 db.SaveChanges();
-                return RedirectToAction("Tubes_Labeled");
+                return View("Tubes_Labeled");
             }
 
             return View(test_Tube);
