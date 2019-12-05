@@ -20,8 +20,8 @@ namespace NorthwestLabs.Models
         [Display(Name = "Early Payment")]
         public string Early_Payment { get; set; }
         [Display(Name = "Early Discount")]
-        public float Early_Discount { get; set; }
+        public double Early_Discount { get; set; }
         [Display(Name = "Total Cost")]
-        public float Total_Cost { get; set; }
+        public double Total_Cost { get; set; }
     }
 }

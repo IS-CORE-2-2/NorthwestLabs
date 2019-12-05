@@ -16,10 +16,10 @@ namespace NorthwestLabs.Models
         [Display(Name = "Material Name")]
         public string Material_Name { get; set; }
         [Display(Name = "Material Quantity")]
-        public float Material_Quantity { get; set; }
+        public double Material_Quantity { get; set; }
         [Display(Name = "Material Unit")]
         public string Quantity_Unit { get; set; }
         [Display(Name = "Material Cost")]
-        public float Material_Cost { get; set; }
+        public double Material_Cost { get; set; }
     }
 }

@@ -11,27 +11,27 @@ namespace NorthwestLabs.Models
     {
         [Key]
         public int Compound_Sample_ID { get; set; }
-        [Display(Name = "Northwest Labs Test Number")]
+        [Display(Name = "Test Number")]
         public int LT_Number { get; set; }
         [Display(Name = "Compound Sequence Code")]
         public int Compound_Sequence_Code { get; set; }
         [Display(Name = "Compound Name")]
         [StringLength(20, ErrorMessage = "Cannot exceed 20 characters")]
         public string Compound_Name { get; set; }
-        [Display(Name = "Employee_ID")]
+        [Display(Name = "Employee ID")]
         public int Employee_ID { get; set; }
         [Display(Name = "Appearance")]
         [StringLength(50, ErrorMessage = "Cannot exceed 50 characters")]
         public string Appearance { get; set; }
         [Display(Name = "Weight")]
-        public float Weight { get; set; }
+        public double Weight { get; set; }
         [Display(Name = "Weight Units")]
         [StringLength(5, ErrorMessage = "Cannot exceed 5 characters")]
         public string Weight_Unit { get; set; }
         [Display(Name = "Molecular Mass")]
-        public float Molecular_Mass { get; set; }
+        public double Molecular_Mass { get; set; }
         [Display(Name = "Maximum Tolerated Dose")]
-        public float MTD { get; set; }
+        public double MTD { get; set; }
         [Display(Name = "Maximum Tolerated Dose Units")]
         [StringLength(5, ErrorMessage = "Cannot exceed 5 characters")]
         public string MTD_Units { get; set; }

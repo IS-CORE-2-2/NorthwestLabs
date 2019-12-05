@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "View_Orders";
+}
+
+<h2>View Orders</h2>
+
+@model IEnumerable<NorthwestLabs.Models.Order>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Received)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Due)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Rerun_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Complete_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Summary_Report)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_Report)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Received)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Due)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Rerun_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Complete_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Summary_Report)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_Report)
+            </td>
+            <td>
+                @Html.ActionLink("Add Report", "Add_Report", new { id = item.Order_ID }) |
+                @Html.ActionLink("View Details", "View_Details", new { id = item.Order_ID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

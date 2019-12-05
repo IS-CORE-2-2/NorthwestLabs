@@ -13,7 +13,7 @@ namespace NorthwestLabs.Models
         [Display(Name = "Reference ID")]
         public int Reference_ID { get; set; }
         [Display(Name = "Assay ID")]
-        public string Assay_ID { get; set; }
+        public int Assay_ID { get; set; }
         [Display(Name = "Literature Reference")]
         public string Literature_Reference { get; set; }
     }

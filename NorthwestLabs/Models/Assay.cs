@@ -13,12 +13,12 @@ namespace NorthwestLabs.Models
         [Key]
         [Required]
         [DisplayName("Assay ID")]
-        public string Assay_ID { get; set; }
+        public int Assay_ID { get; set; }
         [Required]
         [DisplayName("Assay Name")]
         public string Assay_Name { get; set; }
         [DisplayName("Base Cost")]
-        public float Base_Cost { get; set; }
+        public double Base_Cost { get; set; }
         [DisplayName("Description")]
         public string Assay_Description { get; set; }
     }

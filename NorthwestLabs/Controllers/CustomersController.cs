@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using NorthwestLabs.DAL;
 using NorthwestLabs.Models;
 
@@ -13,7 +14,8 @@ namespace NorthwestLabs.Controllers
 {
     public class CustomersController : Controller
     {
-        private NorthwestLabsContext db = new NorthwestLabsContext();
+        private NorthwestLabsContext db = new NorthwestLabsContext(); //db variable
+        public static int currentCustomer = 0; //this is to keep track of the current customer's ID
 
         // GET: Customers
         public ActionResult Index()
@@ -28,9 +30,26 @@ namespace NorthwestLabs.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(string email, string password)
+        public ActionResult Login(FormCollection form, bool rememberMe = false)
         {
-            return View("Customer_Home");
+            String email = form["Email address"].ToString();
+            String password = form["Password"].ToString();
+
+            var dbEmail = db.Customer.Where(s => s.Customer_Email == email).FirstOrDefault<Customer>();
+            
+            string testEmail = dbEmail.Customer_Email;
+            string testPass = dbEmail.Customer_Password;
+
+            if (testEmail == email && testPass == password)
+            {
+                FormsAuthentication.SetAuthCookie(email, rememberMe);
+                CustomersController.currentCustomer = dbEmail.Customer_ID; //This is to grab the current customer's id and load their personal info
+                return RedirectToAction("Customer_Home");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult ListCustomers()
@@ -39,18 +58,33 @@ namespace NorthwestLabs.Controllers
         }
 
         // GET: Customers/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            int id = CustomersController.currentCustomer;
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
             Customer customer = db.Customer.Find(id);
             if (customer == null)
             {
                 return HttpNotFound();
             }
             return View(customer);
+        }
+
+        public ActionResult Order_Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Order order = db.Order.Find(id);
+            if (order == null)
+            {
+                return HttpNotFound();
+            }
+            return View(order);
         }
 
         // GET: Customers/Create
@@ -76,13 +110,17 @@ namespace NorthwestLabs.Controllers
             return View(customer);
         }
 
+ 
+
         // GET: Customers/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            int id = CustomersController.currentCustomer;
+
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
             Customer customer = db.Customer.Find(id);
             if (customer == null)
             {
@@ -102,9 +140,35 @@ namespace NorthwestLabs.Controllers
             {
                 db.Entry(customer).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Customer_Home");
             }
             return View(customer);
+        }
+
+        public ActionResult Create_Order()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create_Order([Bind(Include = "Order_ID,Number_Of_Samples,Date_Due,Order_Comments")] Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                order.Order_Date = DateTime.Now.ToString();
+                order.Customer_ID = CustomersController.currentCustomer;
+                db.Order.Add(order);
+                db.SaveChanges();
+                return RedirectToAction("Shipping_Info");
+            }
+
+            return View(order);
+        }
+
+        public ActionResult Shipping_Info()
+        {
+            return View();
         }
 
         // GET: Customers/Delete/5
@@ -131,6 +195,12 @@ namespace NorthwestLabs.Controllers
             db.Customer.Remove(customer);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult View_Orders()
+        {
+            var orders = db.Database.SqlQuery<Order>("SELECT * FROM [Order] WHERE Customer_ID = " + CustomersController.currentCustomer).ToList<Order>();
+            return View(orders);
         }
 
         protected override void Dispose(bool disposing)

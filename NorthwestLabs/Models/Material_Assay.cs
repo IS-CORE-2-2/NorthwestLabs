@@ -14,11 +14,11 @@ namespace NorthwestLabs.Models
         public int Material_Assay_ID { get; set; }
         [Required]
         [Display(Name = "Assay ID")]
-        public string Assay_ID { get; set; }
+        public int Assay_ID { get; set; }
         [Required]
         [Display(Name = "Material ID")]
         public int Material_ID { get; set; }
         [Display(Name = "Quantity per assay")]
-        public float Quantity_Per_Assay { get; set; }
+        public double Quantity_Per_Assay { get; set; }
     }
 }

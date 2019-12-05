@@ -53,11 +53,11 @@ namespace NorthwestLabs.Models
         [Display(Name = "Payment Info")]
         public string Customer_Payment_Info { get; set; }
         [Display(Name = "Customer Discount")]
-        public string Customer_Discount { get; set; }
+        public double Customer_Discount { get; set; }
         [Display(Name = "Customer Balance")]
-        public string Customer_Balance { get; set; }
+        public double Customer_Balance { get; set; }
         [StringLength(1, ErrorMessage = "This field has a maximum of 1 character.")]
         [Display(Name = "Requested Physical Copy?")]
-        public char Physical_Copy { get; set; }
+        public string Physical_Copy { get; set; }
     }
 }

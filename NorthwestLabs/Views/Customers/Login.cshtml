@@ -5,15 +5,15 @@
 
 <h2>Customer Login</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Login", "Customers", FormMethod.Post))
 {
-    <p>Email:</p>
-    @Html.TextBox("myTextBox", null, new { @class = "form-control" })<br />
-    <p>Password:</p>
-    @Html.TextBox("myTextBox", null, new { @class = "form-control" })<br />
+    <label for="inputEmail">Email address</label>
+    @Html.TextBox("Email address")
+    <label for="inputPassword">Password</label>
+    @Html.Password("Password")
+    <button type="submit">Login</button>
 }
 
-<a href="@Url.Action("Login", "Customer_Home", "Customers")" class="btn btn-default" />
 
 
 

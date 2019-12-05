@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "View_Customers";
+}
+
+<h2>View Customers</h2>
+
+@model IEnumerable<NorthwestLabs.Models.Customer>
+
+<p>
+    @Html.ActionLink("Add New Customer", "Add_Customer")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Address_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Address_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Zipcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Home_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Cell_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Payment_Info)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Balance)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Last_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_First_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Address_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Address_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Zipcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Home_Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Cell_Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Payment_Info)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Balance)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit_Customer", new { id = item.Customer_ID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

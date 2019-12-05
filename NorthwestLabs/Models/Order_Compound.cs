@@ -14,7 +14,7 @@ namespace NorthwestLabs.Models
         public int Order_Compound_ID { get; set; }
         [Display(Name = "Order ID")]
         public int Order_ID { get; set; }
-        [Display(Name = "Lab Test Number")]
+        [Display(Name = "Test Number")]
         public int LT_Number { get; set; }
     }
 }

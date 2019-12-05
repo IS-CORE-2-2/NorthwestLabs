@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "View_New_Orders";
+}
+
+<h2>View New Orders</h2>
+
+@model IEnumerable<NorthwestLabs.Models.Order>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Received)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Due)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Rerun_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Complete_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Comments)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Received)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Due)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Rerun_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Complete_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Comments)
+            </td>
+            <td>
+                @Html.ActionLink("Add Compound Details", "Create_New_LT", new { id = item.Order_ID }) |
+                @Html.ActionLink("Add Price Quote", "Add_Price_Quote", new { id = item.Order_ID })
+            </td>
+        </tr>
+    }
+</table>
+
+

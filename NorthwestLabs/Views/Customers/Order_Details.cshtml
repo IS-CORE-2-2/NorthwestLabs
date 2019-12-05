@@ -1,0 +1,97 @@
+﻿@model NorthwestLabs.Models.Order
+
+@{
+    ViewBag.Title = "Order_Details";
+}
+
+<h2>Order Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Received)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Received)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Due)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Due)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_Rerun_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_Rerun_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_Complete_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_Complete_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_Quote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_Quote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Summary_Report)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Summary_Report)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Report)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_Report)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "View_Orders")
+</p>
+
