@@ -166,6 +166,7 @@
     <Content Include="Views\Seattle\Add_Report.cshtml" />
     <Content Include="Views\Singapore\Add_Price_Quote.cshtml" />
     <Content Include="Views\Singapore\Added_Price_Quote.cshtml" />
+    <Content Include="Views\Seattle\Show_Completed_Orders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />

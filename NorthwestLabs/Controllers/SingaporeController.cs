@@ -185,7 +185,6 @@ namespace NorthwestLabs.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Input_Results([Bind(Include = "Compound_Sample_ID,LT_Number,Compound_Sequence_Code,Compound_Name,Employee_ID,Appearance,Weight,Weight_Unit,Molecular_Mass,MTD,MTD_Units,Test_Date_Time,Pass_Fail,Quantitative_Data,Qualitative_Data")] Compound_Sample compound_Sample)
         {
-            ////HERE
             if (ModelState.IsValid)
             {
                 db.Entry(compound_Sample).State = EntityState.Modified;
@@ -194,5 +193,6 @@ namespace NorthwestLabs.Controllers
             }
             return View(compound_Sample);
         }
+
     }
 }

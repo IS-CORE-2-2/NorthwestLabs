@@ -82,7 +82,8 @@ namespace NorthwestLabs.Controllers
         // GET: Orders
         public ActionResult View_Orders()
         {
-            return View(db.Order.ToList());
+            var New_Orders = db.Database.SqlQuery<Order>("SELECT * FROM [Order] WHERE Summary_Report IS NULL").ToList<Order>();
+            return View(New_Orders);
         }
 
 
@@ -125,11 +126,32 @@ namespace NorthwestLabs.Controllers
         {
             if (ModelState.IsValid)
             {
+                string Today = DateTime.Now.ToString();
+                order.Order_Complete_Date = Today;
                 db.Entry(order).State = EntityState.Modified;
                 db.SaveChanges();
                 return View("Added_Report");
             }
             return View(order);
         }
+
+        // GET: Orders
+        public ActionResult Show_Completed_Orders()
+        {
+            var New_Orders = db.Database.SqlQuery<Order>("SELECT * FROM [Order] WHERE Order_Complete_Date IS NOT NULL").ToList<Order>();
+            return View(New_Orders);
+        }
+
+        public ActionResult Create_Invoice(int? id)
+        {
+            //grab customer ID
+            //make payment Due 2 mo from now
+            //make early payment 1 mo from now
+            //Early discount 10%
+            //Total cost is quote times early discount times customer discount
+            db.Database.ExecuteSqlCommand("INSERT INTO Invoice (Customer_ID, Payment_Due, Early_Payment, Early_Discount, Total_Cost) VALUES(");//START HERE
+            return View();
+        }
+
     }
 }
