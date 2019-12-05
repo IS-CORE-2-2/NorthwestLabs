@@ -37,6 +37,12 @@ namespace NorthwestLabs.Controllers
             return RedirectToAction("Add_Compound_Details");
         }
 
+        public ActionResult View_Orders_Price_Quote()
+        {
+            var Unquoted_Orders = db.Database.SqlQuery<Order>("SELECT * FROM [Order] WHERE Order_Quote = 0").ToList<Order>();
+            return View(Unquoted_Orders);
+        }
+
         // GET: Orders/Edit/5
         public ActionResult Add_Price_Quote(int? id)
         {
@@ -192,6 +198,81 @@ namespace NorthwestLabs.Controllers
                 return View("Results_Inputted");
             }
             return View(compound_Sample);
+        }
+
+        // GET: Materials
+        public ActionResult View_Materials()
+        {
+            return View(db.Material.ToList());
+        }
+
+        // GET: Materials/Details/5
+        public ActionResult Material_Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Material material = db.Material.Find(id);
+            if (material == null)
+            {
+                return HttpNotFound();
+            }
+            return View(material);
+        }
+
+        // GET: Materials/Create
+        public ActionResult Create_Material()
+        {
+            return View();
+        }
+
+        // POST: Materials/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create_Material([Bind(Include = "Material_ID,Material_Name,Material_Quantity,Quantity_Unit,Material_Cost,Min_On_Hand")] Material material)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Material.Add(material);
+                db.SaveChanges();
+                return View("Material_Created");
+            }
+
+            return View(material);
+        }
+
+        // GET: Materials/Edit/5
+        public ActionResult Edit_Material(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Material material = db.Material.Find(id);
+            if (material == null)
+            {
+                return HttpNotFound();
+            }
+            return View(material);
+        }
+
+        // POST: Materials/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit_Material([Bind(Include = "Material_ID,Material_Name,Material_Quantity,Quantity_Unit,Material_Cost,Min_On_Hand")] Material material)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(material).State = EntityState.Modified;
+                db.SaveChanges();
+                return View("Material_Edited");
+            }
+            return View(material);
         }
 
     }

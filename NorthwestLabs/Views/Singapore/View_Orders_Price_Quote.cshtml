@@ -1,9 +1,10 @@
 ﻿
 @{
-    ViewBag.Title = "View_New_Orders";
+    ViewBag.Title = "View_Orders_Price_Quote";
 }
 
-<h2>View New Orders</h2>
+<h2>Select an Order to add a price quote</h2>
+
 
 @model IEnumerable<NorthwestLabs.Models.Order>
 
@@ -58,10 +59,9 @@
                 @Html.DisplayFor(modelItem => item.Order_Comments)
             </td>
             <td>
-                @Html.ActionLink("Add Compound Details", "Create_New_LT", new { id = item.Order_ID }) 
+                @Html.ActionLink("Add Price Quote", "Add_Price_Quote", new { id = item.Order_ID })
             </td>
         </tr>
     }
 </table>
-
 

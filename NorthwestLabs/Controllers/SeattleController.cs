@@ -82,7 +82,7 @@ namespace NorthwestLabs.Controllers
         // GET: Orders
         public ActionResult View_Orders()
         {
-            var New_Orders = db.Database.SqlQuery<Order>("SELECT * FROM [Order] WHERE Summary_Report IS NULL").ToList<Order>();
+            var New_Orders = db.Database.SqlQuery<Order>("SELECT * FROM [Order] WHERE Order_Quote IS NOT NULL AND Summary_Report IS NULL ").ToList<Order>();
             return View(New_Orders);
         }
 

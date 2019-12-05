@@ -22,6 +22,6 @@ namespace NorthwestLabs.Models
         [Display(Name = "Material Cost")]
         public double Material_Cost { get; set; }
         [Display(Name = "Minimum Req. on Hand")]
-        public int Min_On_Hand { get; set; }
+        public double Min_On_Hand { get; set; }
     }
 }

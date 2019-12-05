@@ -175,6 +175,18 @@
     <Content Include="Views\Invoices\Index.cshtml" />
     <Content Include="Views\Seattle\Approve_Invoice.cshtml" />
     <Content Include="Views\Customers\View_Invoices.cshtml" />
+    <Content Include="Views\Singapore\View_Orders_Price_Quote.cshtml" />
+    <Content Include="Views\Materials\Create.cshtml" />
+    <Content Include="Views\Materials\Delete.cshtml" />
+    <Content Include="Views\Materials\Details.cshtml" />
+    <Content Include="Views\Materials\Edit.cshtml" />
+    <Content Include="Views\Materials\Index.cshtml" />
+    <Content Include="Views\Singapore\View_Materials.cshtml" />
+    <Content Include="Views\Singapore\Material_Details.cshtml" />
+    <Content Include="Views\Singapore\Create_Material.cshtml" />
+    <Content Include="Views\Singapore\Material_Created.cshtml" />
+    <Content Include="Views\Singapore\Edit_Material.cshtml" />
+    <Content Include="Views\Singapore\Material_Edited.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -183,6 +195,7 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
+    <Compile Include="Controllers\MaterialsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\SeattleController.cs" />
     <Compile Include="Controllers\SingaporeController.cs" />
