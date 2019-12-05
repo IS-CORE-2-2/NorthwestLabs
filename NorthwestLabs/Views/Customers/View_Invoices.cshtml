@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "View_Invoices";
+}
+
+<h2>View Invoices</h2>
+
+@model IEnumerable<NorthwestLabs.Models.Invoice>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Invoice_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Payment_Due)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Early_Payment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Early_Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_Cost)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Invoice_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payment_Due)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Early_Payment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Early_Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Cost)
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("Back to Customer Home", "Customer_Home", "Customers")
+

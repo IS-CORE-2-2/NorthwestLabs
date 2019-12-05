@@ -138,19 +138,66 @@ namespace NorthwestLabs.Controllers
         // GET: Orders
         public ActionResult Show_Completed_Orders()
         {
-            var New_Orders = db.Database.SqlQuery<Order>("SELECT * FROM [Order] WHERE Order_Complete_Date IS NOT NULL").ToList<Order>();
+            var New_Orders = db.Database.SqlQuery<Order>("SELECT * FROM [Order] WHERE Order_Complete_Date IS NOT NULL AND Invoice_Created IS NULL").ToList<Order>();
             return View(New_Orders);
         }
 
         public ActionResult Create_Invoice(int? id)
         {
-            //grab customer ID
-            //make payment Due 2 mo from now
-            //make early payment 1 mo from now
-            //Early discount 10%
-            //Total cost is quote times early discount times customer discount
-            db.Database.ExecuteSqlCommand("INSERT INTO Invoice (Customer_ID, Payment_Due, Early_Payment, Early_Discount, Total_Cost) VALUES(");//START HERE
-            return View();
+            //find order info
+            var dbOrder = db.Order.Where(s => s.Order_ID == id).FirstOrDefault<Order>();
+            int customer = dbOrder.Customer_ID;
+            double quote = dbOrder.Order_Quote;
+
+            //find customer info
+            var dbOrder_Customer = db.Customer.Where(s => s.Customer_ID == customer).FirstOrDefault<Customer>();
+            double cust_Discount = dbOrder_Customer.Customer_Discount;
+            double early_Discount = 0.05;
+
+            //calc estimated invoice
+            double order_Total = quote * (1 - cust_Discount) * (1 - early_Discount);
+
+            //insert into invoice
+            db.Database.ExecuteSqlCommand("UPDATE [Order] SET Invoice_Created = 'Y' WHERE Order_ID = " + id);
+            db.Database.ExecuteSqlCommand("INSERT INTO Invoice (Customer_ID, Early_Discount, Total_Cost) VALUES(" + customer + ", " + early_Discount + ", " + order_Total + ")");
+            return RedirectToAction("Show_Completed_Orders");
+        }
+
+        public ActionResult Show_Unapproved_Invoices()
+        {
+            var New_Invoices = db.Database.SqlQuery<Invoice>("SELECT * FROM [Invoice] WHERE Payment_Due IS NULL").ToList<Invoice>();
+            return View(New_Invoices);
+        }
+
+        // GET: Invoices/Edit/5
+        public ActionResult Approve_Invoice(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Invoice invoice = db.Invoice.Find(id);
+            if (invoice == null)
+            {
+                return HttpNotFound();
+            }
+            return View(invoice);
+        }
+
+        // POST: Invoices/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Approve_Invoice([Bind(Include = "Invoice_ID,Customer_ID,Payment_Due,Early_Payment,Early_Discount,Total_Cost")] Invoice invoice)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(invoice).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Show_Unapproved_Invoices");
+            }
+            return View(invoice);
         }
 
     }

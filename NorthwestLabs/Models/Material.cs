@@ -21,5 +21,7 @@ namespace NorthwestLabs.Models
         public string Quantity_Unit { get; set; }
         [Display(Name = "Material Cost")]
         public double Material_Cost { get; set; }
+        [Display(Name = "Minimum Req. on Hand")]
+        public int Min_On_Hand { get; set; }
     }
 }

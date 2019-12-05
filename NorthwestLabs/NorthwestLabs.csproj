@@ -167,6 +167,14 @@
     <Content Include="Views\Singapore\Add_Price_Quote.cshtml" />
     <Content Include="Views\Singapore\Added_Price_Quote.cshtml" />
     <Content Include="Views\Seattle\Show_Completed_Orders.cshtml" />
+    <Content Include="Views\Seattle\Show_Unapproved_Invoices.cshtml" />
+    <Content Include="Views\Invoices\Create.cshtml" />
+    <Content Include="Views\Invoices\Delete.cshtml" />
+    <Content Include="Views\Invoices\Details.cshtml" />
+    <Content Include="Views\Invoices\Edit.cshtml" />
+    <Content Include="Views\Invoices\Index.cshtml" />
+    <Content Include="Views\Seattle\Approve_Invoice.cshtml" />
+    <Content Include="Views\Customers\View_Invoices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -174,6 +182,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\SeattleController.cs" />
     <Compile Include="Controllers\SingaporeController.cs" />

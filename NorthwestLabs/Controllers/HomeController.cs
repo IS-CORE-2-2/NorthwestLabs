@@ -23,5 +23,10 @@ namespace NorthwestLabs.Controllers
         {
             return View();
         }
+
+        public ActionResult ViewPricing()
+        {
+            return View();////HERE
+        }
     }
 }

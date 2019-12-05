@@ -221,5 +221,12 @@ namespace NorthwestLabs.Controllers
         {
             return View();
         }
+
+
+        public ActionResult View_Invoices()
+        {
+            var Customer_Invoices = db.Database.SqlQuery<Invoice>("SELECT * FROM [Invoice] WHERE Customer_ID = " + CustomersController.currentCustomer).ToList<Invoice>();
+            return View(Customer_Invoices);
+        }
     }
 }

@@ -42,6 +42,10 @@ namespace NorthwestLabs.Models
         [Display(Name = "Price Quote")]
         public double Order_Quote { get; set; }
 
+        [Display(Name = "Invoice Created")]
+        [StringLength(1, ErrorMessage = "Cannot exceed 1 character")]
+        public string Invoice_Created { get; set; }
+
         [Display(Name = "Order Comments")]
         [StringLength(100, ErrorMessage = "Cannot exceed 100 characters")]
         public string Order_Comments { get; set; }
