@@ -3,14 +3,44 @@
     ViewBag.Title = "Singapore_Home";
 }
 
-<h2>Singapore Home</h2>
+<h2>Singapore Home</h2><br />
 
-@Html.ActionLink("View Unreceived Orders", "View_New_Orders", "Singapore", null, new { @class = "btn" })<br />
-@Html.ActionLink("Schedule a Test", "Schedule_Test", "Singapore", null, new { @class = "btn" })<br />
-@Html.ActionLink("Add a price quote", "View_Orders_Price_Quote", "Singapore", null, new { @class = "btn" })<br />
-@Html.ActionLink("Label Test Tubes", "Label_Tubes", "Singapore", null, new { @class = "btn" })<br />
-@Html.ActionLink("Input Test Results", "Finish_Test", "Singapore", null, new { @class = "btn" })<br />
-@Html.ActionLink("View Materials", "View_Materials", "Singapore", null, new { @class = "btn" })<br />
+<img style="width:100%" src="~/Content/Images/testtubes1.png" /><br /><br />
+<center>
+    <table>
+        <tr>
+            <td>
+                @Html.ActionLink("View Unreceived Orders", "View_New_Orders", "Singapore", null, new { @class = "btn" })
+            </td>
+            <td>
+                @Html.ActionLink("Schedule a Test", "Schedule_Test", "Singapore", null, new { @class = "btn" })
+            </td>
+            <td>
+                @Html.ActionLink("Add a price quote", "View_Orders_Price_Quote", "Singapore", null, new { @class = "btn" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Label Test Tubes", "Label_Tubes", "Singapore", null, new { @class = "btn" })
+            </td>
+            <td>
+                @Html.ActionLink("Input Test Results", "Finish_Test", "Singapore", null, new { @class = "btn" })
+            </td>
+            <td>
+                @Html.ActionLink("View Materials", "View_Materials", "Singapore", null, new { @class = "btn" })
+            </td>
+        </tr>
+    </table>
+</center>
+
+
+<style>
+    td {
+        padding-right: 90px;
+        padding-top: 20px
+    }
+</style>
+
 
 
 

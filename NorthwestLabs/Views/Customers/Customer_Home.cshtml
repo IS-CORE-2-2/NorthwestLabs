@@ -3,12 +3,37 @@
     ViewBag.Title = "Customer_Home";
 }
 
-<h2>Customer Home</h2>
+<h2>Customer Home</h2><br />
 
-@Html.ActionLink("Create a New Work Order", "Create_Order", "Customers", null, new { @class = "btn" })<br />
-@Html.ActionLink("View Orders", "View_Orders", "Customers", null, new { @class = "btn" })<br />
-@Html.ActionLink("View Account Profile", "Details", "Customers", null, new { @class = "btn" })<br />
-@Html.ActionLink("View Invoices", "View_Invoices", "Customers", null, new { @class = "btn" })<br />
+<img style="width:100%" src="~/Content/Images/testtubes1.png" /><br /><br />
+<center>
+    <table>
+        <tr>
+            <td>
+                @Html.ActionLink("Create a New Work Order", "Create_Order", "Customers", null, new { @class = "btn" })
+            </td>
+            <td>
+                @Html.ActionLink("View Orders", "View_Orders", "Customers", null, new { @class = "btn" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("View Account Profile", "Details", "Customers", null, new { @class = "btn" })
+            </td>
+            <td>
+                @Html.ActionLink("View Invoices", "View_Invoices", "Customers", null, new { @class = "btn" })
+            </td>
+        </tr>
+    </table>
+</center>
+
+
+<style>
+    td {
+        padding-right: 90px;
+        padding-top: 20px
+    }
+</style>
 
 
 
