@@ -103,7 +103,7 @@
                 @Html.DisplayFor(modelItem => item.Customer_Balance)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit_Customer", new { id = item.Customer_ID })
+                @Html.ActionLink("Edit", "Edit_Customer", new { id = item.Customer_ID }, new { @class = "btn" })
             </td>
         </tr>
     }

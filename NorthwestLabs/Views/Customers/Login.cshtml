@@ -2,17 +2,20 @@
 @{
     ViewBag.Title = "Login";
 }
-
 <h2>Customer Login</h2>
-
-@using (Html.BeginForm("Login", "Customers", FormMethod.Post))
-{
-    <label for="inputEmail">Email address</label>
-    @Html.TextBox("Email address")
-    <label for="inputPassword">Password</label>
-    @Html.Password("Password")
-    <button type="submit">Login</button>
-}
+<div class="scene_element scene_element--fadeinup">
+    @using (Html.BeginForm("Login", "Customers", FormMethod.Post))
+    {
+        <label for="inputEmail">Email address</label>
+        <br/>
+        @Html.TextBox("Email address")
+        <br/>
+        <label for="inputPassword">Password</label>
+        <br/>
+        @Html.Password("Password")<br /><br />
+        <button type="submit">Login</button>
+    }
+</div>
 
 
 

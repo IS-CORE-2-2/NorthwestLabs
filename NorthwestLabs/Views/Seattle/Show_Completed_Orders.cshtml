@@ -71,7 +71,7 @@
                 @Html.DisplayFor(modelItem => item.Data_Report)
             </td>
             <td>
-                @Html.ActionLink("Create Invoice", "Create_Invoice", new { id = item.Order_ID })
+                @Html.ActionLink("Create Invoice", "Create_Invoice", new { id = item.Order_ID }, new { @class = "btn" })
             </td>
         </tr>
     }

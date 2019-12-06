@@ -50,8 +50,8 @@
                 @Html.DisplayFor(modelItem => item.Min_On_Hand)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit_Material", new { id = item.Material_ID }) |
-                @Html.ActionLink("Details", "Material_Details", new { id = item.Material_ID })
+                @Html.ActionLink("Edit", "Edit_Material", new { id = item.Material_ID }, new { @class = "btn" }) |
+                @Html.ActionLink("Details", "Material_Details", new { id = item.Material_ID }, new { @class = "btn" })
             </td>
         </tr>
     }

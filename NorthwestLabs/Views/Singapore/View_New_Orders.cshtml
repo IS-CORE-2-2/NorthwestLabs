@@ -58,7 +58,7 @@
                 @Html.DisplayFor(modelItem => item.Order_Comments)
             </td>
             <td>
-                @Html.ActionLink("Add Compound Details", "Create_New_LT", new { id = item.Order_ID }) 
+                @Html.ActionLink("Add Compound Details", "Create_New_LT", new { id = item.Order_ID }, new { @class = "btn" }) 
             </td>
         </tr>
     }

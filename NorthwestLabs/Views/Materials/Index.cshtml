@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Materials Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn" })
 </p>
 <table class="table">
     <tr>
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Min_On_Hand)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Material_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Material_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Material_ID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Material_ID }, new { @class = "btn" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Material_ID }, new { @class = "btn" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Material_ID }, new { @class = "btn" })
         </td>
     </tr>
 }

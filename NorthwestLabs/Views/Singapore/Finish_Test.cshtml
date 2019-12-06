@@ -41,7 +41,7 @@
                 @Html.DisplayFor(modelItem => item.Test_Date_Time)
             </td>            
             <td>
-                @Html.ActionLink("Input Results", "Input_Results", new { id = item.Compound_Sample_ID })
+                @Html.ActionLink("Input Results", "Input_Results", new { id = item.Compound_Sample_ID }, new { @class = "btn" })
             </td>
         </tr>
     }

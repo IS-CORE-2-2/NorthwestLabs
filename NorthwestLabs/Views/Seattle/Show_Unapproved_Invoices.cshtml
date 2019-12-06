@@ -46,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.Total_Cost)
             </td>
             <td>
-                @Html.ActionLink("Review For Approval", "Approve_Invoice", new { id = item.Invoice_ID })
+                @Html.ActionLink("Review For Approval", "Approve_Invoice", new { id = item.Invoice_ID }, new { @class = "btn" })
             </td>
         </tr>
     }

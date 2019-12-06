@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="customCSS.css">
 <html>
 <head>
     <meta charset="utf-8" />
@@ -12,26 +13,19 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Northwest Labs", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <ul class="nav navbar-nav vertical-center">
+                    <li>@Html.ActionLink("  Northwest Labs  ", "Index", "Home", null, new { @class = "btn" })</li>
+                    <li>@Html.ActionLink("  About  ", "About", "Home", null, new { @class = "btn" })</li>
+                    <li>@Html.ActionLink("  Contact  ", "Contact", "Home", null, new { @class = "btn" })</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="container body-content">
-        @RenderBody()
+        <div class="center scene_element scene_element--fadein">@RenderBody()</div>
         <hr />
-        <footer>
+        <footer class="scene_element scene_element--fadeinup">
             <p>&copy; @DateTime.Now.Year - Northwest Labs</p>
         </footer>
     </div>
@@ -40,3 +34,104 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
+
+<style>
+    .navbar-nav {
+        color: whitesmoke;
+    }
+    .navbar-inverse {
+        background-color: #3C5465;
+    }
+    .navbat-nav>li>a {
+        color: whitesmoke;
+        background-color:blue;
+    }
+    .grow {
+        transition: all .2s ease-in-out;
+    }
+
+        .grow:hover {
+            transform: scale(1.1);
+        }
+
+    .centerHorizontal {
+        width: 60%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navbar-brand {
+        font-family: new century schoolbook;
+        font-weight: bold;
+        font-size: 16pt;
+        transition: all .2s ease-in-out;
+        background-color: #202D35;
+        padding: 0px;
+        padding-right: 15px;
+        padding-left: 15px;
+        color: black;
+    }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            color: white;
+            background-color: #434343;
+        }
+
+    .vertical-center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    button {
+        color: whitesmoke;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: #3C5465;
+        padding: 5px;
+        border-radius: 0px;
+        display: inline-block;
+        border: none;
+        transition: all 0.4s ease 0s;
+    }
+
+        button:hover {
+            color: aliceblue background: #434343;
+            background: #202D35;
+            letter-spacing: 1px;
+            -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+            transition: all 0.4s ease 0s;
+        }
+
+    .btn {
+        color: whitesmoke;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: #3C5465;
+        padding: 5px;
+        border-radius: 0px;
+        display: inline-block;
+        border: none;
+        transition: all 0.4s ease 0s;
+    }
+
+        .btn:hover {
+            color: aliceblue;
+            background: #202D35;
+            letter-spacing: 1px;
+            -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+            transition: all 0.4s ease 0s;
+        }
+    a {
+        color:whitesmoke;
+        transition: all .2s ease-in-out;
+    }
+</style>

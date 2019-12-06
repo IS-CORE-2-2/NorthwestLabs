@@ -200,5 +200,79 @@ namespace NorthwestLabs.Controllers
             return View(invoice);
         }
 
+        public ActionResult View_Assays()
+        {
+            return View(db.Assay.ToList());
+        }
+
+        // GET: Assays/Details/5
+        public ActionResult Assay_Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Assay assay = db.Assay.Find(id);
+            if (assay == null)
+            {
+                return HttpNotFound();
+            }
+            return View(assay);
+        }
+
+        // GET: Assays/Create
+        public ActionResult Create_Assay()
+        {
+            return View();
+        }
+
+        // POST: Assays/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create_Assay([Bind(Include = "Assay_ID,Assay_Name,Base_Cost,Assay_Description")] Assay assay)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Assay.Add(assay);
+                db.SaveChanges();
+                return View("Assay_Created");
+            }
+
+            return View(assay);
+        }
+
+        // GET: Assays/Edit/5
+        public ActionResult Edit_Assay(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Assay assay = db.Assay.Find(id);
+            if (assay == null)
+            {
+                return HttpNotFound();
+            }
+            return View(assay);
+        }
+
+        // POST: Assays/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit_Assay([Bind(Include = "Assay_ID,Assay_Name,Base_Cost,Assay_Description")] Assay assay)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(assay).State = EntityState.Modified;
+                db.SaveChanges();
+                return View("Assay_Edited");
+            }
+            return View(assay);
+        }
+
     }
 }

@@ -67,7 +67,7 @@
             @Html.DisplayFor(modelItem => item.Order_Quote)
         </td>
         <td>
-            @Html.ActionLink("Details", "Order_Details", new { id = item.Order_ID })
+            @Html.ActionLink("Details", "Order_Details", new { id = item.Order_ID }, new { @class = "btn" })
         </td>
     </tr>
     }

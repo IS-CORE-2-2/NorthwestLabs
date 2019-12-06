@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "View_Assays";
+}
+
+<h2>View Assays</h2>
+
+@model IEnumerable<NorthwestLabs.Models.Assay>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create_Assay")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Assay_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Base_Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Assay_Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Assay_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Base_Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Assay_Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit_Assay", new { id = item.Assay_ID }, new { @class = "btn" }) |
+                @Html.ActionLink("Details", "Assay_Details", new { id = item.Assay_ID }, new { @class = "btn" }) 
+            </td>
+        </tr>
+    }
+
+</table>
+

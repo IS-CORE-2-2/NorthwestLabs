@@ -70,8 +70,8 @@
                 @Html.DisplayFor(modelItem => item.Data_Report)
             </td>
             <td>
-                @Html.ActionLink("Add Report", "Add_Report", new { id = item.Order_ID }) |
-                @Html.ActionLink("View Details", "View_Details", new { id = item.Order_ID })
+                @Html.ActionLink("Add Report", "Add_Report", new { id = item.Order_ID }, new { @class = "btn" }) |
+                @Html.ActionLink("View Details", "View_Details", new { id = item.Order_ID }, new { @class = "btn" })
             </td>
         </tr>
     }

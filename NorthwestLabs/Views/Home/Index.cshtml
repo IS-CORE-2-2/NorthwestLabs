@@ -1,8 +1,34 @@
 ﻿@{
     ViewBag.Title = "Home";
 }
-<h2>Welcome to Northwest Labs</h2>
-<div>@Html.ActionLink("Customer Login", "Login", "Customers")<br /></div>
-<div>@Html.ActionLink("Employee Login", "Login", "Employees")<br /></div>
+<script src="~/Animations/lottie.js"></script> @*Loads Lottie animation player*@
 
+@*<h2>Welcome to Northwest Labs</h2>*@
+<div class="jumbotron">
+    <div style="width:50%; display:block;  margin-left: auto; margin-right: auto" id="NWLlogo"></div>
+    <div style="width:40%; display:block; margin-left:auto; margin-right:auto; padding-bottom:40px">
+        <div class="columnleft">@Html.ActionLink("Customer Login", "Login", "Customers", null, new { @class = "btn" })<br /></div>
+        <div class="columnright">@Html.ActionLink("Employee Login", "Login", "Employees", null, new { @class = "btn" })<br /></div>
+    </div>
+</div>
 
+<script src="~/Index.js"></script>
+
+<style>
+    .columnleft {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        padding-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .columnright {
+        float: right;
+        width: 50%;
+        padding: 10px;
+        padding-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
