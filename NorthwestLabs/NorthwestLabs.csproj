@@ -102,10 +102,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\kent.jpg" />
     <Content Include="Content\Images\michael.jpg" />
-    <Content Include="Content\Images\savannah.jpg" />
+    <Content Include="Content\Images\savannah1.jpg" />
+    <Content Include="Content\Images\savannah2.jpg" />
     <Content Include="Content\Images\shipping_label.jpg" />
     <Content Include="Content\Images\testtubes1.png" />
     <Content Include="Content\Images\whitney.jpg" />
+    <Content Include="Content\Images\whitney1.jpg" />
+    <Content Include="Content\Images\whitney2.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="customCSS.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

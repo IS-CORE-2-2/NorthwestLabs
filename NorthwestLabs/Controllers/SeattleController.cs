@@ -1,4 +1,9 @@
-﻿using NorthwestLabs.DAL;
+﻿/*
+ *  SEATTLE CONTROLLER, CONTROLS ALL ROUTES FOR SEATTLE EMPLOYEE PORTAL
+ *  LAST EDITED 12/6/2019
+ */
+
+using NorthwestLabs.DAL;
 using NorthwestLabs.Models;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ *  EMPLOYEE CONTROLLER, CONTROLS EMPLOYEE LOGIN
+ *  LAST EDITED 12/3/2019
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;

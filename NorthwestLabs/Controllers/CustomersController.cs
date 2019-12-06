@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ *  CUSTOMER CONTROLLER, CONTROLS ALL ROUTES FOR CUTOMER PORTAL
+ *  LAST EDITED 12/5/2019
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;

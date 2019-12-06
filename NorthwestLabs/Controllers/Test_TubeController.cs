@@ -1,4 +1,6 @@
-﻿using System;
+﻿//NOT USED, CREATED TO COPY FUNCTIONS AND CSHTML VIEWS
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
