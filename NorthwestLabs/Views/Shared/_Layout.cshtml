@@ -14,9 +14,9 @@
         <div class="container">
             <div class="navbar-header">
                 <ul class="nav navbar-nav vertical-center">
-                    <li>@Html.ActionLink("  Northwest Labs  ", "Index", "Home", null, new { @class = "btn" })</li>
-                    <li>@Html.ActionLink("  About  ", "About", "Home", null, new { @class = "btn" })</li>
-                    <li>@Html.ActionLink("  Contact  ", "Contact", "Home", null, new { @class = "btn" })</li>
+                    <li>@Html.ActionLink("  Northwest Labs  ", "Index", "Home", null, new { @class = "navbtn century" })</li>
+                    <li>@Html.ActionLink("  About  ", "About", "Home", null, new { @class = "navbtn uppercase" })</li>
+                    <li>@Html.ActionLink("  Contact  ", "Contact", "Home", null, new { @class = "navbtn uppercase" })</li>
                 </ul>
             </div>
         </div>
@@ -44,7 +44,6 @@
     }
     .navbat-nav>li>a {
         color: whitesmoke;
-        background-color:blue;
     }
     .grow {
         transition: all .2s ease-in-out;
@@ -108,7 +107,33 @@
             box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
             transition: all 0.4s ease 0s;
         }
+    .navbtn {
+        color: whitesmoke;
+        text-decoration: none;
+        background-color: transparent;
+        padding: 5px;
+        border-radius: 0px;
+        display: inline-block;
+        border: none;
+        transition: all 0.4s ease 0s;
+    }
 
+        .navbtn:hover {
+            color: aliceblue;
+            background: #202D35;
+            letter-spacing: 1px;
+            -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+            transition: all 0.4s ease 0s;
+        }
+    .century {
+        font-family: 'Century Schoolbook';
+        font-size: 18pt;
+    }
+    .uppercase {
+        text-transform: uppercase;
+    }
     .btn {
         color: whitesmoke;
         text-transform: uppercase;
